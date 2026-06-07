@@ -1,5 +1,5 @@
 import React from "react";
-import { Check, X, AlertTriangle, ArrowUp, Loader2, Circle, Calendar } from "lucide-react";
+import { Check, X, AlertTriangle, ArrowUp, Loader2, Circle, Calendar, FileDown } from "lucide-react";
 import { formatTimeUTC } from "../utils/formatters";
 
 export type StepStatus = "waiting" | "running" | "pass" | "warn" | "block" | "escalated" | "done";
@@ -15,6 +15,9 @@ interface AgentStepProps {
   timestamp?: string;
   isLast?: boolean;
   prevStatus?: StepStatus;
+  isReport?: boolean;
+  pdfUrl?: string;
+  requestId?: string;
 }
 
 const STATUS_COLORS: Record<StepStatus, {
@@ -149,7 +152,10 @@ export const AgentStep: React.FC<AgentStepProps> = ({
   reason,
   timestamp,
   isLast = false,
-  prevStatus
+  prevStatus,
+  isReport = false,
+  pdfUrl,
+  requestId
 }) => {
   const cfg = STATUS_COLORS[status] || STATUS_COLORS.waiting;
   const isRunning = status === "running";
@@ -217,6 +223,16 @@ export const AgentStep: React.FC<AgentStepProps> = ({
                     <Calendar className="w-3 h-3 mr-1.5 opacity-75" />
                     <span>Completed at {formatTimeUTC(timestamp)} UTC</span>
                   </div>
+                )}
+                {isReport && status === "done" && requestId && (
+                  <button
+                    type="button"
+                    onClick={() => window.open(`/api/requests/${requestId}/report`, "_blank")}
+                    className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-emerald-500/40 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-[11px] font-bold uppercase tracking-wider hover:bg-emerald-500/20 transition-colors cursor-pointer"
+                  >
+                    <FileDown className="w-3.5 h-3.5" />
+                    <span>Download Audit PDF</span>
+                  </button>
                 )}
               </div>
             )}

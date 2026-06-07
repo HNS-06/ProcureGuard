@@ -298,7 +298,7 @@ export const RequestDetail: React.FC = () => {
         {/* Left column (65%) — Pipeline + Final Decision + Human Review */}
         <div className="lg:col-span-7 space-y-6">
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 md:p-8 rounded-xl shadow-sm">
-            <AgentPipelineTracker agents={request.agents} />
+            <AgentPipelineTracker agents={request.agents} requestId={request.request_id} />
             <FinalDecisionBanner request={request} />
           </div>
 

@@ -6,6 +6,7 @@ interface PollingState<T> {
   error: Error | null;
   lastUpdated: number | null;
   isPolling: boolean;
+  tick: number;
 }
 
 export function usePolling<T>(
@@ -18,6 +19,7 @@ export function usePolling<T>(
   const [error, setError] = useState<Error | null>(null);
   const [lastUpdated, setLastUpdated] = useState<number | null>(null);
   const [isPolling, setIsPolling] = useState<boolean>(false);
+  const [tick, setTick] = useState<number>(0);
   const fetchRef = useRef(fetchFn);
 
   // Keep the latest fetch function reference without re-creating the interval
@@ -38,9 +40,12 @@ export function usePolling<T>(
         setIsPolling(true);
         const result = await fetchRef.current();
         if (!cancelled) {
+          // Always replace the data reference so React re-renders even if
+          // the polled payload is structurally identical to the previous one.
           setData(result);
           setError(null);
           setLastUpdated(Date.now());
+          setTick(t => t + 1);
           setLoading(false);
         }
       } catch (e) {
@@ -64,5 +69,5 @@ export function usePolling<T>(
     };
   }, [intervalMs, enabled]);
 
-  return { data, loading, error, lastUpdated, isPolling };
+  return { data, loading, error, lastUpdated, isPolling, tick };
 }

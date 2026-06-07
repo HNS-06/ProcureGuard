@@ -6,11 +6,30 @@ import { AgentStep, type StepStatus } from "./AgentStep";
 interface AgentPipelineTrackerProps {
   id?: string;
   agents?: AgentPipeline;
+  requestId?: string;
 }
 
 const mapStatus = (s: string): StepStatus => {
   if (s === "done") return "done";
   return s as StepStatus;
+};
+
+const reportStatusToStep = (s: string): StepStatus => {
+  if (s === "done") return "done";
+  if (s === "running") return "running";
+  return "waiting";
+};
+
+const reportVerdictFor = (s: string): string => {
+  if (s === "done") return "COMPILED";
+  if (s === "running") return "ANALYZING";
+  return "WAITING";
+};
+
+const reportReasonFor = (s: string): string => {
+  if (s === "done") return "PDF audit report compiled and signed off successfully.";
+  if (s === "running") return "Gathering agent outputs to compile full PDF transaction audit logs...";
+  return "Waiting for preceding checkpoints to complete.";
 };
 
 const AGENT_STEPS: Array<{
@@ -74,19 +93,15 @@ const AGENT_STEPS: Array<{
     description: "Generates full PDF audit trail and executive summary",
     icon: FileSpreadsheet,
     buildData: (a) => ({
-      status: mapStatus(a.report.status),
-      verdict: a.report.status === "done" ? "COMPILED" : a.report.status === "running" ? "BUILDING" : "WAITING",
-      reason: a.report.status === "done"
-        ? "PDF transaction audit log is available for download. Log has been signed and locked."
-        : a.report.status === "running"
-          ? "Gathering agent outputs to compile full PDF transaction audit logs..."
-          : "Waiting for preceding checkpoints to complete.",
+      status: reportStatusToStep(a.report.status),
+      verdict: reportVerdictFor(a.report.status),
+      reason: reportReasonFor(a.report.status),
       timestamp: a.report.timestamp
     })
   }
 ];
 
-export const AgentPipelineTracker: React.FC<AgentPipelineTrackerProps> = ({ id, agents }) => {
+export const AgentPipelineTracker: React.FC<AgentPipelineTrackerProps> = ({ id, agents, requestId }) => {
   if (!agents) {
     return (
       <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-xl bg-white dark:bg-slate-900 text-center text-slate-500 text-sm">
@@ -95,7 +110,6 @@ export const AgentPipelineTracker: React.FC<AgentPipelineTrackerProps> = ({ id, 
     );
   }
 
-  // Compute per-step data with the running connector rule (from previous step)
   const rendered = AGENT_STEPS.map((step) => ({
     step,
     data: step.buildData(agents)
@@ -117,6 +131,7 @@ export const AgentPipelineTracker: React.FC<AgentPipelineTrackerProps> = ({ id, 
       <div className="space-y-3 relative">
         {rendered.map((r, idx) => {
           const prev = idx > 0 ? rendered[idx - 1].data.status : undefined;
+          const isReport = r.step.key === "report";
           return (
             <AgentStep
               key={r.step.key}
@@ -129,6 +144,9 @@ export const AgentPipelineTracker: React.FC<AgentPipelineTrackerProps> = ({ id, 
               timestamp={r.data.timestamp}
               isLast={idx === rendered.length - 1}
               prevStatus={prev}
+              isReport={isReport}
+              pdfUrl={isReport ? agents.report.pdf_url : undefined}
+              requestId={isReport ? requestId : undefined}
             />
           );
         })}
