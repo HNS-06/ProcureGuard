@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:ital,wght@0,450;0,600;0,800;1,450&display=swap');
+@import "tailwindcss";
+
+@variant dark (.dark &);
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom enterprise grid colors */
+  --color-slate-850: #1e293b;
+  --color-slate-950: #0f172a;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes flowDown {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 24px;
+  }
+}
+
+@keyframes slideInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 240px;
+  }
+}
+
+@keyframes expandHeight {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 320px;
+    opacity: 1;
+  }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes progressBar {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes blipGreen {
+  0% {
+    background-color: rgba(16, 185, 129, 0.18);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes blipAmber {
+  0% {
+    background-color: rgba(245, 158, 11, 0.18);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes livePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #1f2937 25%, #374151 50%, #1f2937 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-shimmer-light {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.pulse-ring {
+  animation: pulseRing 1.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.flow-line {
+  background-image: linear-gradient(to bottom, #3b82f6 50%, transparent 50%);
+  background-size: 2px 12px;
+  background-repeat: repeat-y;
+  animation: flowDown 1s linear infinite;
+}
+
+.live-dot {
+  animation: livePulse 1.4s ease-in-out infinite;
+}
+
+.blip-green {
+  animation: blipGreen 1.2s ease-out;
+}
+
+.blip-amber {
+  animation: blipAmber 1.2s ease-out;
+}
+
+.toast-in {
+  animation: toastIn 0.25s ease-out;
+}
+
+.toast-out {
+  animation: toastOut 0.25s ease-out forwards;
+}
+
+.slide-in-top {
+  animation: slideInTop 0.4s ease-out;
+}
+
+.expand-height {
+  animation: expandHeight 0.45s ease-out;
+}
+
+.fade-slide-up {
+  animation: fadeSlideUp 0.4s ease-out;
+}
+
+.spin-slow {
+  animation: spin 1.4s linear infinite;
+}
+
+.progress-bar-tick {
+  animation: progressBar 5s linear forwards;
+}
+
+.pipeline-track {
+  position: relative;
+}
+
+.pipeline-track::before {
+  content: '';
+  position: absolute;
+  left: 31px;
+  top: 40px;
+  bottom: 40px;
+  width: 2px;
+  background: #E2E8F0;
+  z-index: 0;
+}
+
+.dark .pipeline-track::before {
+  background: #334155;
+}
+
+.agent-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.json-key {
+  color: #79c0ff;
+}
+
+.json-string {
+  color: #a5d6ff;
+}
+
+.json-number {
+  color: #f8d2a0;
+}
+
+.json-boolean {
+  color: #ff7b72;
+}
+
+.json-null {
+  color: #ff7b72;
+}
+
+.json-punct {
+  color: #8b949e;
+}
+
+/* Custom scrollbars for data-dense tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.4);
+}
+
+/* Hide native number-input spinner buttons to match custom UI styling */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}

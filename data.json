@@ -1,0 +1,412 @@
+{
+  "requests": [
+    {
+      "request_id": "REQ-2026-004",
+      "status": "approved",
+      "submitted_at": 1780771581602,
+      "request": {
+        "item_description": "Debug test item for pipeline",
+        "quantity": 10,
+        "unit_cost": 50,
+        "total_cost": 500,
+        "department": "Engineering",
+        "vendor_name": "Test Vendor",
+        "urgency": "low",
+        "justification": "Debug test of pipeline completion.",
+        "submitted_by": "Debugger",
+        "submitted_date": "2026-06-06T18:46:21.599Z"
+      },
+      "agents": {
+        "budget": {
+          "status": "pass",
+          "verdict": "BUDGET APPROVED",
+          "reason": "Allotment cleared. $500 verified against active Engineering department balance.",
+          "timestamp": "2026-06-06T18:46:25.602Z"
+        },
+        "vendor_risk": {
+          "status": "pass",
+          "verdict": "MINIMAL RISK",
+          "reason": "Supplier identity cleared. \"Test Vendor\" is a registered business partner with verified anti-bribery policies.",
+          "timestamp": "2026-06-06T18:46:29.602Z"
+        },
+        "compliance": {
+          "status": "pass",
+          "verdict": "COMPLIANT",
+          "reason": "Fully compliant. Procurement aligns with standard materials, equipment, and workspace security protocols.",
+          "timestamp": "2026-06-06T18:46:33.602Z"
+        },
+        "manager": {
+          "status": "pass",
+          "verdict": "AUTO-APPROVED",
+          "reason": "Clear clearance status from budget (PASS) and compliance (PASS). Delegated limit criteria met automatic approval scope.",
+          "timestamp": "2026-06-06T18:46:37.602Z"
+        },
+        "report": {
+          "status": "running",
+          "pdf_url": "",
+          "timestamp": ""
+        }
+      },
+      "audit_trail": [
+        {
+          "agent": "System Intake",
+          "action": "Submission Logged",
+          "timestamp": "2026-06-06T18:46:21.599Z",
+          "verdict": "SUCCESS",
+          "reason": "Procurement request submitted by Debugger into AI routing pipeline."
+        },
+        {
+          "agent": "Budget Agent",
+          "action": "Budget Ledger Audit",
+          "timestamp": "2026-06-06T18:46:25.602Z",
+          "verdict": "PASS",
+          "reason": "Allotment cleared. $500 verified against active Engineering department balance."
+        },
+        {
+          "agent": "Vendor Risk Agent",
+          "action": "Vendor Risk Assessment",
+          "timestamp": "2026-06-06T18:46:29.602Z",
+          "verdict": "PASS",
+          "reason": "Supplier identity cleared. \"Test Vendor\" is a registered business partner with verified anti-bribery policies."
+        },
+        {
+          "agent": "Compliance Agent",
+          "action": "Corporate Compliance Audit",
+          "timestamp": "2026-06-06T18:46:33.602Z",
+          "verdict": "PASS",
+          "reason": "Fully compliant. Procurement aligns with standard materials, equipment, and workspace security protocols."
+        },
+        {
+          "agent": "Manager Approval Agent",
+          "action": "Manager Auto-Approval Assessment",
+          "timestamp": "2026-06-06T18:46:37.602Z",
+          "verdict": "PASS",
+          "reason": "Clear clearance status from budget (PASS) and compliance (PASS). Delegated limit criteria met automatic approval scope."
+        }
+      ],
+      "final_decision": "approved"
+    },
+    {
+      "request_id": "REQ-2026-001",
+      "status": "approved",
+      "submitted_at": 1780564500000,
+      "request": {
+        "item_description": "50 Dell XPS Enterprise Laptops for Engineering",
+        "quantity": 50,
+        "unit_cost": 1500,
+        "total_cost": 75000,
+        "department": "Engineering",
+        "vendor_name": "Dell Technologies",
+        "urgency": "high",
+        "justification": "Critical onboarding batch for Q3 software engineering interns and new full-time hires. Standard developer configuration.",
+        "submitted_by": "Sarah Jenkins (Engineering Manager)",
+        "submitted_date": "2026-06-04T09:15:00Z"
+      },
+      "agents": {
+        "budget": {
+          "status": "pass",
+          "verdict": "APPROVED",
+          "reason": "Requested $75,000.00 is fully allocated inside the Q2-Q3 engineering hardware budget. $145,000.00 remains in department buffer.",
+          "timestamp": "2026-06-04T09:15:12Z"
+        },
+        "vendor_risk": {
+          "status": "pass",
+          "verdict": "LOW RISK",
+          "reason": "Dell Technologies is registered as a Tier-1 Preferred Enterprise Supplier. Contract terms are pre-negotiated and active.",
+          "timestamp": "2026-06-04T09:15:25Z"
+        },
+        "compliance": {
+          "status": "pass",
+          "verdict": "COMPLIANT",
+          "reason": "Hardware security profile meets standard developer compliance directive (SOC-2 Typ II laptop encryption requirements).",
+          "timestamp": "2026-06-04T09:15:38Z"
+        },
+        "manager": {
+          "status": "pass",
+          "verdict": "AUTO-APPROVED",
+          "reason": "Procurement amount of $75,000.00 is below the manual VP review threshold of $100,000.00 for pre-approved hardware catalogues.",
+          "timestamp": "2026-06-04T09:15:50Z"
+        },
+        "report": {
+          "status": "done",
+          "pdf_url": "#",
+          "timestamp": "2026-06-04T09:16:00Z"
+        }
+      },
+      "audit_trail": [
+        {
+          "agent": "System Intake",
+          "action": "Submission Received",
+          "timestamp": "2026-06-04T09:15:00Z",
+          "verdict": "PROCESSED",
+          "reason": "Procurement request logged in ERP system."
+        },
+        {
+          "agent": "Budget Agent",
+          "action": "Compliance Audit",
+          "timestamp": "2026-06-04T09:15:12Z",
+          "verdict": "PASS",
+          "reason": "Funds available in hardware allotment."
+        },
+        {
+          "agent": "Vendor Risk Agent",
+          "action": "Supplier Assessment",
+          "timestamp": "2026-06-04T09:15:25Z",
+          "verdict": "PASS",
+          "reason": "Tier-1 pre-negotiated vendor, no active alerts."
+        },
+        {
+          "agent": "Compliance Agent",
+          "action": "Standard Operations Audit",
+          "timestamp": "2026-06-04T09:15:38Z",
+          "verdict": "PASS",
+          "reason": "Devices checked for standard enterprise software pre-loads."
+        },
+        {
+          "agent": "Manager Approval Agent",
+          "action": "Authorization Check",
+          "timestamp": "2026-06-04T09:15:50Z",
+          "verdict": "PASS",
+          "reason": "Below human intervention limit. Delegated ledger entry approved."
+        },
+        {
+          "agent": "Report Agent",
+          "action": "Report Assembly",
+          "timestamp": "2026-06-04T09:16:00Z",
+          "verdict": "DONE",
+          "reason": "Procurement summary and audit trail PDF compiled and signed."
+        }
+      ],
+      "final_decision": "approved"
+    },
+    {
+      "request_id": "REQ-2026-002",
+      "status": "escalated",
+      "submitted_at": 1780648200000,
+      "request": {
+        "item_description": "Enterprise Cloudflare CDN and WAF Security License",
+        "quantity": 1,
+        "unit_cost": 18500,
+        "total_cost": 18500,
+        "department": "Finance",
+        "vendor_name": "Cloudflare Inc.",
+        "urgency": "high",
+        "justification": "To mitigate DDOS vulnerabilities flagged on our payment routing infrastructure by external security audits last week.",
+        "submitted_by": "Marcus Vance (VP of Finance)",
+        "submitted_date": "2026-06-05T08:30:00Z"
+      },
+      "agents": {
+        "budget": {
+          "status": "pass",
+          "verdict": "APPROVED",
+          "reason": "Cost of $18,500.00 approved under critical infrastructure security emergency reserves.",
+          "timestamp": "2026-06-05T08:30:10Z"
+        },
+        "vendor_risk": {
+          "status": "warn",
+          "verdict": "ACTION RECOMMENDED",
+          "reason": "Cloudflare is highly reputable, but their current certificate file on our company portal has expired. Requires human override.",
+          "timestamp": "2026-06-05T08:30:25Z"
+        },
+        "compliance": {
+          "status": "pass",
+          "verdict": "COMPLIANT",
+          "reason": "Meets critical cybersecurity standards. Highly recommended to fulfill SOC-2 control criteria.",
+          "timestamp": "2026-06-05T08:30:40Z"
+        },
+        "manager": {
+          "status": "escalated",
+          "verdict": "ESCALATED TO HUMAN REVIEW",
+          "reason": "Standard automation halted because of high-priority compliance/vendor certification warnings flag.",
+          "timestamp": "2026-06-05T08:30:52Z"
+        },
+        "report": {
+          "status": "waiting",
+          "pdf_url": "",
+          "timestamp": ""
+        }
+      },
+      "audit_trail": [
+        {
+          "agent": "System Intake",
+          "action": "Submission Received",
+          "timestamp": "2026-06-05T08:30:00Z",
+          "verdict": "PROCESSED",
+          "reason": "Procurement request logged in ERP system."
+        },
+        {
+          "agent": "Budget Agent",
+          "action": "Allotment Verification",
+          "timestamp": "2026-06-05T08:30:10Z",
+          "verdict": "PASS",
+          "reason": "Emergency reserve funds allocated."
+        },
+        {
+          "agent": "Vendor Risk Agent",
+          "action": "Credentials Sweep",
+          "timestamp": "2026-06-05T08:30:25Z",
+          "verdict": "WARN",
+          "reason": "Vendor registration certificate expired 2 days ago."
+        },
+        {
+          "agent": "Compliance Agent",
+          "action": "Standard Checks",
+          "timestamp": "2026-06-05T08:30:40Z",
+          "verdict": "PASS",
+          "reason": "Full alignment with infrastructure mandates."
+        },
+        {
+          "agent": "Manager Approval Agent",
+          "action": "Authorization Check",
+          "timestamp": "2026-06-05T08:30:52Z",
+          "verdict": "ESCALATE",
+          "reason": "Escalated for human validation due to expired vendor registry file."
+        }
+      ],
+      "final_decision": "escalated_to_human"
+    },
+    {
+      "request_id": "REQ-2026-003",
+      "status": "rejected",
+      "submitted_at": 1780657220000,
+      "request": {
+        "item_description": "12 Custom Premium Ergonomic VR Developer Chairs",
+        "quantity": 12,
+        "unit_cost": 6500,
+        "total_cost": 78000,
+        "department": "Marketing",
+        "vendor_name": "Aether Luxe Living",
+        "urgency": "low",
+        "justification": "To furnish the creative content lounge and boost physical morale for the promotional branding team.",
+        "submitted_by": "Jessica Diaz (Creative Director)",
+        "submitted_date": "2026-06-05T11:00:20Z"
+      },
+      "agents": {
+        "budget": {
+          "status": "block",
+          "verdict": "BLOCKED",
+          "reason": "Marketing furniture and fixtures budget is currently maxed out. Requested $78,000.00 greatly exceeds the remaining $4,200.00 department envelope.",
+          "timestamp": "2026-06-05T11:00:32Z"
+        },
+        "vendor_risk": {
+          "status": "warn",
+          "verdict": "HIGH RISK WARNING",
+          "reason": "Aether Luxe Living is a newly registered consumer furniture brand with zero corporate purchase history in our vendor database.",
+          "timestamp": "2026-06-05T11:00:45Z"
+        },
+        "compliance": {
+          "status": "block",
+          "verdict": "NON-COMPLIANT",
+          "reason": "Cost per workspace ($6,500/chair) violates executive workstation standard limit of $1,200.00 per unit under procurement policy 4.F.",
+          "timestamp": "2026-06-05T11:00:58Z"
+        },
+        "manager": {
+          "status": "block",
+          "verdict": "AUTO-REJECTED",
+          "reason": "Auto-rejected because multiple agents raised Block / High Risk statuses on fundamental criteria.",
+          "timestamp": "2026-06-05T11:01:10Z"
+        },
+        "report": {
+          "status": "done",
+          "pdf_url": "#",
+          "timestamp": "2026-06-05T11:01:25Z"
+        }
+      },
+      "audit_trail": [
+        {
+          "agent": "System Intake",
+          "action": "Submission Received",
+          "timestamp": "2026-06-05T11:00:20Z",
+          "verdict": "PROCESSED",
+          "reason": "Procurement request logged in ERP system."
+        },
+        {
+          "agent": "Budget Agent",
+          "action": "Limit Verification",
+          "timestamp": "2026-06-05T11:00:32Z",
+          "verdict": "BLOCK",
+          "reason": "Insufficient balance in category 9A-Marketing."
+        },
+        {
+          "agent": "Vendor Risk Agent",
+          "action": "Compliance Scan",
+          "timestamp": "2026-06-05T11:00:45Z",
+          "verdict": "WARN",
+          "reason": "Vendor profile is an unverified boutique consumer shop."
+        },
+        {
+          "agent": "Compliance Agent",
+          "action": "Threshold Inspection",
+          "timestamp": "2026-06-05T11:00:58Z",
+          "verdict": "BLOCK",
+          "reason": "Unit price violates physical asset spending limitations."
+        },
+        {
+          "agent": "Manager Approval Agent",
+          "action": "Resolution",
+          "timestamp": "2026-06-05T11:01:10Z",
+          "verdict": "BLOCK",
+          "reason": "Consolidated auto-rejection due to double block metrics."
+        },
+        {
+          "agent": "Report Agent",
+          "action": "Report Export",
+          "timestamp": "2026-06-05T11:01:25Z",
+          "verdict": "DONE",
+          "reason": "Rejection documentation logged and distributed."
+        }
+      ],
+      "final_decision": "rejected"
+    }
+  ],
+  "budgets": [
+    {
+      "department": "Engineering",
+      "annual_limit": 500000,
+      "spent": 180000,
+      "remaining": 320000,
+      "percent_used": 36,
+      "status": "healthy"
+    },
+    {
+      "department": "HR",
+      "annual_limit": 120000,
+      "spent": 38000,
+      "remaining": 82000,
+      "percent_used": 32,
+      "status": "healthy"
+    },
+    {
+      "department": "Finance",
+      "annual_limit": 250000,
+      "spent": 60000,
+      "remaining": 190000,
+      "percent_used": 24,
+      "status": "healthy"
+    },
+    {
+      "department": "Operations",
+      "annual_limit": 300000,
+      "spent": 210000,
+      "remaining": 90000,
+      "percent_used": 70,
+      "status": "warning"
+    },
+    {
+      "department": "Marketing",
+      "annual_limit": 150000,
+      "spent": 145800,
+      "remaining": 4200,
+      "percent_used": 97,
+      "status": "critical"
+    },
+    {
+      "department": "Legal",
+      "annual_limit": 90000,
+      "spent": 18000,
+      "remaining": 72000,
+      "percent_used": 20,
+      "status": "healthy"
+    }
+  ]
+}

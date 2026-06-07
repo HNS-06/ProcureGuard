@@ -1,0 +1,8 @@
+{
+  "name": "Procurement Approval System",
+  "description": "An enterprise Procurement Approval System featuring an automated five-agent AI review pipeline, detailed policy inspection logs, and decision workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
