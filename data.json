@@ -1,6 +1,99 @@
 {
   "requests": [
     {
+      "request_id": "REQ-2026-005",
+      "status": "approved",
+      "submitted_at": 1780821220359,
+      "request": {
+        "item_description": "50 Dell XPS Enterprise Laptops for Engineering",
+        "quantity": 50,
+        "unit_cost": 1500,
+        "total_cost": 75000,
+        "department": "Engineering",
+        "vendor_name": "Dell Technologies",
+        "urgency": "medium",
+        "justification": "Critical onboarding batch for Q3 software engineering interns and new hires. Standard developer configuration.",
+        "submitted_by": "Subramanian (Authorized User)",
+        "submitted_date": "2026-06-07T08:33:40.359Z"
+      },
+      "agents": {
+        "budget": {
+          "status": "pass",
+          "verdict": "BUDGET APPROVED",
+          "reason": "Allotment cleared. $75,000 verified against active Engineering department balance.",
+          "timestamp": "2026-06-07T08:33:44.359Z"
+        },
+        "vendor_risk": {
+          "status": "pass",
+          "verdict": "MINIMAL RISK",
+          "reason": "Supplier identity cleared. \"Dell Technologies\" is a registered business partner with verified anti-bribery policies.",
+          "timestamp": "2026-06-07T08:33:48.359Z"
+        },
+        "compliance": {
+          "status": "pass",
+          "verdict": "COMPLIANT",
+          "reason": "Fully compliant. Procurement aligns with standard materials, equipment, and workspace security protocols.",
+          "timestamp": "2026-06-07T08:33:52.359Z"
+        },
+        "manager": {
+          "status": "pass",
+          "verdict": "AUTO-APPROVED",
+          "reason": "Clear clearance status from budget (PASS) and compliance (PASS). Delegated limit criteria met automatic approval scope.",
+          "timestamp": "2026-06-07T08:33:56.359Z"
+        },
+        "report": {
+          "status": "done",
+          "pdf_url": "/api/requests/REQ-2026-005/report",
+          "timestamp": "2026-06-07T08:33:59.363Z"
+        }
+      },
+      "audit_trail": [
+        {
+          "agent": "System Intake",
+          "action": "Submission Logged",
+          "timestamp": "2026-06-07T08:33:40.359Z",
+          "verdict": "SUCCESS",
+          "reason": "Procurement request submitted by Subramanian (Authorized User) into AI routing pipeline."
+        },
+        {
+          "agent": "Budget Agent",
+          "action": "Budget Ledger Audit",
+          "timestamp": "2026-06-07T08:33:44.359Z",
+          "verdict": "PASS",
+          "reason": "Allotment cleared. $75,000 verified against active Engineering department balance."
+        },
+        {
+          "agent": "Vendor Risk Agent",
+          "action": "Vendor Risk Assessment",
+          "timestamp": "2026-06-07T08:33:48.359Z",
+          "verdict": "PASS",
+          "reason": "Supplier identity cleared. \"Dell Technologies\" is a registered business partner with verified anti-bribery policies."
+        },
+        {
+          "agent": "Compliance Agent",
+          "action": "Corporate Compliance Audit",
+          "timestamp": "2026-06-07T08:33:52.359Z",
+          "verdict": "PASS",
+          "reason": "Fully compliant. Procurement aligns with standard materials, equipment, and workspace security protocols."
+        },
+        {
+          "agent": "Manager Approval Agent",
+          "action": "Manager Auto-Approval Assessment",
+          "timestamp": "2026-06-07T08:33:56.359Z",
+          "verdict": "PASS",
+          "reason": "Clear clearance status from budget (PASS) and compliance (PASS). Delegated limit criteria met automatic approval scope."
+        },
+        {
+          "agent": "Report Agent",
+          "action": "Audit File Sign-Off",
+          "timestamp": "2026-06-07T08:33:59.363Z",
+          "verdict": "COMPILED",
+          "reason": "Cryptographically checked PDF report compiled with state ledgers, ready for audit log archive."
+        }
+      ],
+      "final_decision": "approved"
+    },
+    {
       "request_id": "REQ-2026-004",
       "status": "approved",
       "submitted_at": 1780816133378,

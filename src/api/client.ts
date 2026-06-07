@@ -27,7 +27,7 @@ function getCurrentUserLabel(): string {
 const BASE_URL = (import.meta as any).env?.VITE_API_URL || "";
 
 // Check if we should fall back to mock client (if VITE_API_URL is missing or empty)
-const useMock = !BASE_URL;
+const useMock = false;
 
 // Initial high-fidelity seed data for the enterprise mock system
 const MOCK_SEED_REQUESTS: ProcurementRequest[] = [
